@@ -5,7 +5,7 @@ export default function Home() {
         Analyst AI — first page
       </h1>
       <p className="mt-4 text-gray-600">
-        Project started locally with Next.js
+        Project started locally with Next.js Лалала
       </p>
     </main>
   );

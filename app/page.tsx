@@ -1,13 +1,20 @@
-export default function Home() {
+export default async function Home() {
+  const res = await fetch("http://localhost:3000/api/health");
+  
+  if (!res.ok) {
+    return <div>Failed to fetch health</div>;
+  }
+  
+  const data = await res.json();
   return (
-    <main className="p-8">
-      <h1 className="text-2xl font-bold">
-        Analyst AI — first page
-      </h1>
-      <p className="mt-4 text-gray-600">
-        Project started locally with Next.js Лалала
-      </p>
-    </main>
+  <main className="p-8">
+    <h1>Health: {data.status}</h1>
+    <p>Service: {data.service}</p>
+    <p>Timestamp: {data.timestamp}</p>
+ 
+  
+  <p>Доп техт без энпоинта</p>
+  </main>
   );
 }
 
